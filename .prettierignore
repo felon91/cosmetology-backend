@@ -1,0 +1,25 @@
+# ide
+.idea/
+.vscode/
+
+# npm
+node_modules/
+package.json
+package-lock.json
+yarn.lock
+
+# misc
+coverage
+tsconfig.json
+
+# next
+.next
+.next-server
+public
+
+# changelog
+*.hbs
+CHANGELOG.md
+
+# storybook
+storybook-static
