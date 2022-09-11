@@ -1,3 +1,5 @@
+import { fail } from 'lib/core';
+
 import { Bid } from './model';
 
 import type { BidProps } from 'api/bids/core';
@@ -9,8 +11,10 @@ export const saveBid = (res: Response, data: BidProps) => {
 
   bid.save(function (err) {
     if (err) {
-      return res.status(500).json('Error');
+      return res
+        .status(200)
+        .json({ ...fail, errors: [{ field: 'phone', msg: 'Некорректный телефон' }] });
     }
-    return res.status(200).json('Success');
+    return res.status(200).json({ success: true, body: null, errors: null });
   });
 };

@@ -4,7 +4,7 @@ import { Articles } from './model';
 
 import type { ArticlesResponse } from 'api/articles/core';
 
-export const getArticles = (limit = 15): QueryType<ArticlesResponse[], ArticlesResponse> =>
+export const getArticles = (limit = 15): QueryType<ArticlesResponse[] | null, ArticlesResponse> =>
   Articles.find().limit(limit);
 
 export const getArticleBySlug = (
