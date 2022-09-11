@@ -1,9 +1,11 @@
 import { Router } from 'express';
 
-import categoriesRoutes from 'api/categories';
+import articlesRoutes from 'api/articles';
+import bidsRoutes from 'api/bids';
 
 const api = Router();
 
-api.use(categoriesRoutes);
+api.use(articlesRoutes);
+api.use(bidsRoutes);
 
 export default api;

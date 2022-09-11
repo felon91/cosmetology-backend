@@ -6,6 +6,7 @@
   "main": "src/server.ts",
   "scripts": {
     "dev": "nodemon",
+    "build": "ttsc --noEmit false -p .",
     "format": "prettier --write .",
     "lint": "eslint . --ext .ts,.tsx,.js,.json,.gql --fix --cache --max-warnings=0",
     "type-check": "tsc --pretty --noEmit",
