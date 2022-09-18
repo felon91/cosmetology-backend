@@ -3,7 +3,6 @@ import { Schema, model } from 'mongoose';
 const BidsSchema = new Schema({
   name: {
     type: Schema.Types.String,
-    required: true,
   },
   comment: {
     type: Schema.Types.String,
