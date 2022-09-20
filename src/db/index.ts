@@ -1,6 +1,7 @@
 /* eslint-disable no-console */
 import mongoose from 'mongoose';
 import https from 'https';
+import * as fs from 'fs';
 
 import { app } from 'server';
 
@@ -11,7 +12,17 @@ const connectDb = (): void => {
     return;
   }
 
-  const server = process.env.ENV === 'production' ? () => https.createServer(app) : () => app;
+  const server =
+    process.env.ENV === 'production'
+      ? () =>
+          https.createServer(
+            {
+              key: fs.readFileSync('/var/www/httpd-cert/www-root/alicosmetology.by_le1.key'),
+              cert: fs.readFileSync('/var/www/httpd-cert/www-root/alicosmetology.by_le1.crtca'),
+            },
+            app
+          )
+      : () => app;
 
   mongoose
     .connect(url, { useNewUrlParser: true, useUnifiedTopology: true })
