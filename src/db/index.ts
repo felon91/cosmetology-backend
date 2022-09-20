@@ -17,8 +17,8 @@ const connectDb = (): void => {
       ? () =>
           https.createServer(
             {
-              key: fs.readFileSync('/var/www/httpd-cert/www-root/alicosmetology.by_le1.key'),
-              cert: fs.readFileSync('/var/www/httpd-cert/www-root/alicosmetology.by_le1.crtca'),
+              key: fs.readFileSync('./alicosmetology.by_le1.key'),
+              cert: fs.readFileSync('./alicosmetology.by_le1.crtca'),
             },
             app
           )
