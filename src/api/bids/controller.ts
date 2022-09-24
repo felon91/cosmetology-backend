@@ -1,4 +1,5 @@
 import { fail } from 'lib/core';
+import { sendMail } from 'lib/mailer';
 
 import { Bid } from './model';
 
@@ -15,6 +16,7 @@ export const saveBid = (res: Response, data: BidProps) => {
         .status(200)
         .json({ ...fail, errors: [{ field: 'phone', msg: 'Некорректный телефон' }] });
     }
+    void sendMail();
     return res.status(200).json({ success: true, body: null, errors: null });
   });
 };
