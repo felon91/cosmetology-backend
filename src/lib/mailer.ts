@@ -11,7 +11,7 @@ const transporter = createTransport({
 });
 
 const getMailOptions = () => ({
-  from: 'alicosmatology@gmail.com', // Sender address
+  from: 'videocoursereact@gmail.com', // Sender address
   to: 'felon_91@mail.ru', // List of recipients
   subject: 'Заявка с сайта', // Subject line
   html: 'This <i>message</i> with <strong>attachments</strong>.',
