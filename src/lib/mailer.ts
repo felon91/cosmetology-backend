@@ -1,12 +1,9 @@
 import { createTransport } from 'nodemailer';
 
 const transporter = createTransport({
-  // @ts-ignore 123
   host: 'smtp.gmail.com',
   port: 465,
-  secure: true,
   auth: {
-    type: 'OAuth2',
     user: process.env.EMAIL_USERNAME,
     pass: process.env.EMAIL_PASSWORD,
   },
