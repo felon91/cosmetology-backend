@@ -6,6 +6,10 @@ const transporter = createTransport({
   port: 465,
   secure: true,
   auth: {
+    type: 'OAuth2',
+    clientId: process.env.CLIENT_ID,
+    clientSecret: process.env.CLIENT_SECRET,
+    accessToken: process.env.ACCESS_TOKEN,
     user: process.env.EMAIL_USERNAME,
     pass: process.env.EMAIL_PASSWORD,
   },
