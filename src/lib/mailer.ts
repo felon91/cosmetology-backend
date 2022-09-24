@@ -1,8 +1,7 @@
 import { createTransport } from 'nodemailer';
 
 const transporter = createTransport({
-  //host: 'smtp.gmail.com',
-  service: 'gmail',
+  host: '"smtp.yandex.ru',
   port: 465,
   auth: {
     user: process.env.EMAIL_USERNAME,
